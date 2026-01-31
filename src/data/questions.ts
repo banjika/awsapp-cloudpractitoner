@@ -1,5 +1,6 @@
 // AWS Cloud Kigali - Sample Questions with Cultural Analogies
 import { Question } from '../types';
+import { additionalQuestions } from './additionalQuestions';
 
 export const sampleQuestions: Question[] = [
   // ============================================
@@ -669,16 +670,19 @@ export const sampleQuestions: Question[] = [
   },
 ];
 
+// Combine all questions
+export const allQuestions: Question[] = [...sampleQuestions, ...additionalQuestions];
+
 // Function to get questions by domain
 export function getQuestionsByDomain(domain: string): Question[] {
-  return sampleQuestions.filter(q => q.domain === domain);
+  return allQuestions.filter(q => q.domain === domain);
 }
 
 // Function to get a random subset of questions
 export function getRandomQuestions(count: number, domain?: string): Question[] {
   let questions = domain
-    ? sampleQuestions.filter(q => q.domain === domain)
-    : [...sampleQuestions];
+    ? allQuestions.filter(q => q.domain === domain)
+    : [...allQuestions];
 
   // Shuffle using Fisher-Yates algorithm
   for (let i = questions.length - 1; i > 0; i--) {
