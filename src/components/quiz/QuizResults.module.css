@@ -1,0 +1,246 @@
+/* Quiz Results Styles */
+.results {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+/* Score Section */
+.scoreSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.scoreCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: conic-gradient(
+    var(--score-color) var(--score),
+    var(--color-border) var(--score)
+  );
+}
+
+.scoreCircle::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: var(--color-surface);
+  border-radius: 50%;
+}
+
+.scoreCircle.passed {
+  --score-color: var(--color-success);
+}
+
+.scoreCircle.failed {
+  --score-color: var(--color-error);
+}
+
+.scoreValue {
+  position: relative;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.scoreDetails h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.scoreDetails .scoreText {
+  color: var(--color-text-secondary);
+}
+
+.scoreDetails .scoreTextEn {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+}
+
+/* Message */
+.message {
+  padding: var(--spacing-md);
+  background: var(--gradient-secondary);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.message p {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.messageEn {
+  color: var(--color-text-secondary) !important;
+  font-size: var(--font-size-sm) !important;
+  margin-top: var(--spacing-xs);
+}
+
+/* Domain Breakdown */
+.breakdown {
+  text-align: left;
+  margin-bottom: var(--spacing-xl);
+}
+
+.breakdown h3 {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.domainList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.domainItem {
+  background: var(--color-background);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.domainHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+
+.domainName {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.domainScore {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.domainScore.domainPassed {
+  color: var(--color-success);
+}
+
+.domainScore.domainFailed {
+  color: var(--color-error);
+}
+
+.domainBar {
+  height: 8px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.domainProgress {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.domainProgress.domainPassed {
+  background: var(--color-success);
+}
+
+.domainProgress.domainFailed {
+  background: var(--color-error);
+}
+
+/* Exam Stats */
+.examStats {
+  padding: var(--spacing-md);
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.statValue {
+  font-size: var(--font-size-2xl);
+}
+
+.statLabel {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Tips */
+.tips {
+  text-align: left;
+  padding: var(--spacing-md);
+  background: rgba(241, 196, 15, 0.1);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-warning);
+}
+
+.tips h4 {
+  color: var(--color-warning);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.tips ul {
+  padding-left: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.tips li {
+  list-style: disc;
+  margin-bottom: var(--spacing-xs);
+}
+
+@media (min-width: 640px) {
+  .scoreSection {
+    flex-direction: row;
+  }
+
+  .scoreCircle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .scoreCircle::before {
+    width: 140px;
+    height: 140px;
+  }
+
+  .scoreDetails {
+    text-align: left;
+  }
+}

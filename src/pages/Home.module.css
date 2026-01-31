@@ -1,0 +1,256 @@
+/* Home Page Styles */
+.home {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-2xl) 0;
+  background: var(--gradient-hero);
+  margin: calc(-1 * var(--spacing-md));
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  color: white;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.heroContent {
+  max-width: 600px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.titleMain {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.titleSub {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-normal);
+  opacity: 0.9;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.95;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.heroActions a {
+  width: 100%;
+  max-width: 280px;
+}
+
+.heroActions button {
+  width: 100%;
+}
+
+.welcomeBack {
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-size-base);
+  opacity: 0.9;
+}
+
+.heroVisual {
+  margin-top: var(--spacing-xl);
+}
+
+.cloudIcon {
+  font-size: 80px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Section Styles */
+.sectionTitle {
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-primary);
+}
+
+/* Features Section */
+.features {
+  padding: var(--spacing-2xl) 0;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.featureCard {
+  background: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featureIcon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.featureCard h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.featureCard p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Domains Section */
+.domains {
+  padding: var(--spacing-2xl) 0;
+  background: var(--color-background);
+}
+
+.domainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.domainCard {
+  background: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--domain-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.domainPercentage {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--domain-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.domainCard h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.domainCard p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* CTA Section */
+.cta {
+  background: var(--gradient-primary);
+  margin: var(--spacing-2xl) calc(-1 * var(--spacing-md));
+  padding: var(--spacing-2xl) var(--spacing-md);
+  text-align: center;
+  color: white;
+  border-radius: var(--radius-xl);
+}
+
+.cta h2 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.cta p {
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.95;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .heroActions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .heroActions a {
+    width: auto;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .domainGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+  }
+
+  .heroContent {
+    flex: 1;
+  }
+
+  .heroVisual {
+    margin-top: 0;
+    margin-left: var(--spacing-2xl);
+  }
+
+  .cloudIcon {
+    font-size: 120px;
+  }
+
+  .titleMain {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featureGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .domainGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

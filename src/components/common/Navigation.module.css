@@ -1,0 +1,206 @@
+/* Navigation Styles */
+.nav {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.logoIcon {
+  font-size: var(--font-size-2xl);
+}
+
+.logoText {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hamburger Menu Button */
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  transition: background var(--transition-fast);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  transition: transform var(--transition-fast);
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+.hamburgerOpen {
+  background: transparent;
+}
+
+.hamburgerOpen::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburgerOpen::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.menuContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-surface);
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  padding: 80px var(--spacing-lg) var(--spacing-lg);
+  overflow-y: auto;
+}
+
+.menuOpen {
+  transform: translateX(0);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.menuLink {
+  display: block;
+  padding: var(--spacing-md);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.menuLink:hover {
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.menuLink.active {
+  background: var(--color-primary);
+  color: white;
+}
+
+.loginLink {
+  background: var(--gradient-primary);
+  color: white !important;
+  text-align: center;
+}
+
+.loginLink:hover {
+  opacity: 0.9;
+}
+
+.signOutButton {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: none;
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.signOutButton:hover {
+  background: var(--color-error);
+  color: white;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.userAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+
+  .menuContainer {
+    position: static;
+    transform: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  .menu {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .menuLink {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .loginLink {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  .signOutButton {
+    width: auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
