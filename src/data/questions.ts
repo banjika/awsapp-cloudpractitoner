@@ -1,6 +1,7 @@
 // AWS Cloud Kigali - Sample Questions with Cultural Analogies
 import { Question } from '../types';
 import { additionalQuestions } from './additionalQuestions';
+import { moreQuestions } from './moreQuestions';
 
 export const sampleQuestions: Question[] = [
   // ============================================
@@ -671,7 +672,7 @@ export const sampleQuestions: Question[] = [
 ];
 
 // Combine all questions
-export const allQuestions: Question[] = [...sampleQuestions, ...additionalQuestions];
+export const allQuestions: Question[] = [...sampleQuestions, ...additionalQuestions, ...moreQuestions];
 
 // Function to get questions by domain
 export function getQuestionsByDomain(domain: string): Question[] {
