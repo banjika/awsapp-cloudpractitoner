@@ -2,6 +2,7 @@
 import { Question } from '../types';
 import { additionalQuestions } from './additionalQuestions';
 import { moreQuestions } from './moreQuestions';
+import { extendedQuestions } from './extendedQuestions';
 
 export const sampleQuestions: Question[] = [
   // ============================================
@@ -672,7 +673,7 @@ export const sampleQuestions: Question[] = [
 ];
 
 // Combine all questions
-export const allQuestions: Question[] = [...sampleQuestions, ...additionalQuestions, ...moreQuestions];
+export const allQuestions: Question[] = [...sampleQuestions, ...additionalQuestions, ...moreQuestions, ...extendedQuestions];
 
 // Function to get questions by domain
 export function getQuestionsByDomain(domain: string): Question[] {
