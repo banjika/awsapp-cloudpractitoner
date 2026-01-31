@@ -1,0 +1,20 @@
+/* Offline Indicator Styles */
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-warning);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.icon {
+  font-size: var(--font-size-base);
+}
+
+.text {
+  text-align: center;
+}
